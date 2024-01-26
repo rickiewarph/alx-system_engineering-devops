@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Perform these:
+#   Creating a file /var/run/myscript.pid with the script PID.
+#   Showing "To infinity and beyond" loop
+#   shwoing "I hate the kill command" upon receipt of a SIGTERM
+#   Shwoing "Y U no love me?!" upon receipt of a SIGINT
+#   Deleting the file /var/run/myscript.pid and terminates upon
+#+  receipt of a SIGQUIT or SIGTERM.
+
+terminator() {
+  rm /var/run/myscript.pid
+  exit
+}
+
+echo "$$" > /var/run/myscript.pid
+
+while true
+do
+  echo "To infinity and beyond"
+  sleep 2
+  trap 'echo "Y U no love me?!"' SIGINT
+  trap 'echo "I hate the kill command" && terminator' SIGTERM
+  trap 'terminator' SIGQUIT
+done
