@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Displaying a list of currently running pos.
+# Shows all processes, for all users, inclusive of those
+# +which might not have a TTY.
+
+ps -auxf
