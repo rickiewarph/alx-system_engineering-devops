@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Configures ubuntu server:
 # Backup the original hosts file
 sudo cp /etc/hosts /etc/hosts.bak
 
@@ -8,4 +8,3 @@ sudo sed -i 's/127.0.0.1 localhost/127.0.0.2 localhost/' /etc/hosts
 
 # Update facebook.com entry to 8.8.8.8
 sudo sed -i 's/[0-9.]* facebook.com/8.8.8.8 facebook.com/' /etc/hosts
-
