@@ -1,5 +1,5 @@
-# using puppet to make changes to the default ssh config file
-# so that one can connect to a server without typing a password.
+# employ puppet to make changes to the default ssh config fle
+# to ensure no one connects to a server without typing a password.
 
 include stdlib
 
@@ -13,11 +13,11 @@ file_line { 'SSH Private Key':
 
 # Regex match explanation
 #
-# ^       beginning of the line
-# [#]*  atleast one hash character
-# [\s]*  zero or more white space characters
+# ^       start of the line
+# [#]*  atleast one hash char
+# [\s]*  zero or more white space chars
 # (?i)IdentityFile case insensitive "IdentityFile"
-# [\s]+ at least one whitespace character
+# [\s]+ at least one whitespace char
 # ~/.ssh/id_rsa The ssh private key file path we want to replace
 # $      end of the line
 
@@ -32,9 +32,9 @@ file_line { 'Deny Password Auth':
 # Regex match explanation
 #
 # ^       beginning of the line
-# [#]*  atleast one hash character
-# [\s]*  zero or more white space characters
+# [#]*  atleast one hash char
+# [\s]*  zero or more white space char
 # (?i)PasswordAuthentication case insensitive "PasswordAuthentication"
-# [\s]+ at least one whitespace character
+# [\s]+ at least one whitespace char
 # (yes|no) with the value "yes" or the value "no"
 # $      end of the line
