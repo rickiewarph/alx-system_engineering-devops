@@ -14,6 +14,6 @@ username=$3
 ssh_key=$4
 
 # Transfer the file using scp
-scp -o StrictHostKeyChecking=no -i "$ssh_key" "$file_path" "$ubbuntu@$100.24.236.109:~/"
+scp -o StrictHostKeyChecking=no -i "$ssh_key" "$file_path" "$ubbuntu@100.24.236.109:~/"
 
 exit 0
