@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Importing requests module
+Task 0 module
 """
 
 from requests import get
@@ -8,7 +8,7 @@ from requests import get
 
 def number_of_subscribers(subreddit):
     """
-    function that queries the Reddit API and returns the number of subscribers
+    func querrying Reddit API and returns the no. of subs
     (not active users, total subscribers) for a given subreddit.
     """
 
